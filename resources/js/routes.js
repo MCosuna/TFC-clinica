@@ -37,7 +37,8 @@ const router = new VueRouter({
             path: '/',
             name: 'inicio',
             component: inicio
-        },
+        }
+        ,
         {
             path: '/reserva',
             name: 'reserva',

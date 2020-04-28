@@ -6,7 +6,7 @@
 import "./bootstrap"
 import Vue from 'vue';
 import vuetify from '@/js/plugins/vuetify';
-
+//Vue.use(Vuetify);
 //importar las rutas desde vue routes
 import Route from '@/js/routes.js';
 
@@ -15,7 +15,6 @@ import App from '@/js/components/App';
 // require('./bootstrap');
 
 // window.Vue = require('vue');
-
 
 /**
  * The following block of code may be used to automatically register your
@@ -43,10 +42,10 @@ import App from '@/js/components/App';
 
 const app = new Vue({
     el: '#app',
-    // vuetify,
+     vuetify,
     router: Route,
     render: h => h(App),
-     vuetify : new Vuetify()
+    // vuetify : new Vuetify()
 });
 
 export default app;
