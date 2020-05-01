@@ -11,6 +11,12 @@ import vuetify from '@/js/plugins/vuetify';
 import Route from '@/js/routes.js';
 
 import App from '@/js/components/App';
+
+
+import axios from "axios";
+import VueAxios from "vue-axios";
+Vue.use(VueAxios, axios)
+
 // import Vuetify from "vuetify/lib";
 // require('./bootstrap');
 

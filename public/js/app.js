@@ -2155,9 +2155,71 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      datos: [],
+      errors: [],
+      cliente: {
+        name: '',
+        lname: '',
+        phone: '',
+        message: '',
+        email: '',
+        dni: null
+      }
+    };
+  },
+  created: function created() {},
   mounted: function mounted() {
     console.log("Component reserva mounted.");
+  },
+  methods: {
+    crearCita: function crearCita() {
+      var _this = this;
+
+      this.$http.post("/reserva", this.cliente).then(function (response) {
+        _this.datos.push(response.data.cliente);
+
+        _this.cliente = {
+          name: '',
+          email: '',
+          lname: '',
+          phone: '',
+          message: '',
+          dni: null
+        }; //console.log(response.data.cliente)
+
+        var parsedobj = JSON.parse(JSON.stringify(response.data));
+        console.log(parsedobj);
+      }, function (response) {
+        _this.errors = response.data; //console.log(this.error)
+      });
+    }
   }
 });
 
@@ -6764,7 +6826,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.btn{\r\n  background-color: #660358;\n}\n.reserva{\r\n  margin-top: 5% !important;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.btn{\r\n  background-color: #660358;\n}\n.reserva{\r\n  margin-top: 5% !important;\n}\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -38308,6 +38370,19 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-axios/dist/vue-axios.min.js":
+/*!******************************************************!*\
+  !*** ./node_modules/vue-axios/dist/vue-axios.min.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;var _typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(o){return typeof o}:function(o){return o&&"function"==typeof Symbol&&o.constructor===Symbol&&o!==Symbol.prototype?"symbol":typeof o};!function(){function o(e,t){if(!o.installed){if(o.installed=!0,!t)return void console.error("You have to install axios");e.axios=t,Object.defineProperties(e.prototype,{axios:{get:function(){return t}},$http:{get:function(){return t}}})}}"object"==( false?undefined:_typeof(exports))?module.exports=o: true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function(){return o}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):undefined}();
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/App.vue?vue&type=template&id=332fccf4&scoped=true&":
 /*!******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/App.vue?vue&type=template&id=332fccf4&scoped=true& ***!
@@ -38703,147 +38778,295 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "reserva container-fluid center " }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "well well-sm" }, [
+          _c(
+            "form",
+            {
+              staticClass: "form-horizontal",
+              attrs: { method: "post" },
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.crearCita($event)
+                }
+              }
+            },
+            [
+              _c("fieldset", [
+                _c("legend", { staticClass: "text-center header" }, [
+                  _vm._v("Reserva tu cita")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-8" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.cliente.name,
+                          expression: "cliente.name"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        id: "fname",
+                        name: "name",
+                        type: "text",
+                        placeholder: "Nombre"
+                      },
+                      domProps: { value: _vm.cliente.name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.cliente, "name", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-8" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.cliente.lname,
+                          expression: "cliente.lname"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        id: "lname",
+                        name: "name",
+                        type: "text",
+                        placeholder: "Apellidos"
+                      },
+                      domProps: { value: _vm.cliente.lname },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.cliente, "lname", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-8" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.cliente.email,
+                          expression: "cliente.email"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        id: "email",
+                        name: "email",
+                        type: "text",
+                        placeholder: "Email"
+                      },
+                      domProps: { value: _vm.cliente.email },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.cliente, "email", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-8" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.cliente.phone,
+                          expression: "cliente.phone"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        id: "phone",
+                        name: "phone",
+                        type: "text",
+                        placeholder: "Teléfono"
+                      },
+                      domProps: { value: _vm.cliente.phone },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.cliente, "phone", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-8" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.cliente.dni,
+                          expression: "cliente.dni"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        id: "dni",
+                        name: "dni",
+                        type: "text",
+                        placeholder: "DNI"
+                      },
+                      domProps: { value: _vm.cliente.dni },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.cliente, "dni", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _vm._m(5),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-8" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.cliente.message,
+                          expression: "cliente.message"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        id: "message",
+                        name: "message",
+                        placeholder: "Déjanos un mensaje",
+                        rows: "7"
+                      },
+                      domProps: { value: _vm.cliente.message },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.cliente, "message", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(6)
+              ])
+            ]
+          )
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "reserva container-fluid " }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("div", { staticClass: "well well-sm" }, [
-            _c(
-              "form",
-              { staticClass: "form-horizontal", attrs: { method: "post" } },
-              [
-                _c("fieldset", [
-                  _c("legend", { staticClass: "text-center header" }, [
-                    _vm._v("Reserva tu cita")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "span",
-                      { staticClass: "col-md-1 col-md-offset-2 text-center" },
-                      [_c("i", { staticClass: "fa fa-user bigicon" })]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-8" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          id: "fname",
-                          name: "name",
-                          type: "text",
-                          placeholder: "Nombre"
-                        }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "span",
-                      { staticClass: "col-md-1 col-md-offset-2 text-center" },
-                      [_c("i", { staticClass: "fa fa-user bigicon" })]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-8" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          id: "lname",
-                          name: "name",
-                          type: "text",
-                          placeholder: "Apellidos"
-                        }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "span",
-                      { staticClass: "col-md-1 col-md-offset-2 text-center" },
-                      [_c("i", { staticClass: "fa fa-envelope-o bigicon" })]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-8" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          id: "email",
-                          name: "email",
-                          type: "text",
-                          placeholder: "Email"
-                        }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "span",
-                      { staticClass: "col-md-1 col-md-offset-2 text-center" },
-                      [_c("i", { staticClass: "fa fa-phone-square bigicon" })]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-8" }, [
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          id: "phone",
-                          name: "phone",
-                          type: "text",
-                          placeholder: "Teléfono"
-                        }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "span",
-                      { staticClass: "col-md-1 col-md-offset-2 text-center" },
-                      [
-                        _c("i", {
-                          staticClass: "fa fa-pencil-square-o bigicon"
-                        })
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-8" }, [
-                      _c("textarea", {
-                        staticClass: "form-control",
-                        attrs: {
-                          id: "message",
-                          name: "message",
-                          placeholder: "Déjanos un mensaje",
-                          rows: "7"
-                        }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("div", { staticClass: "col-md-12 text-center" }, [
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-primary btn-lg",
-                          attrs: { type: "submit" }
-                        },
-                        [_vm._v("ENVIAR")]
-                      )
-                    ])
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
+    return _c("span", { staticClass: "col-md-1 col-md-offset-2 text-center" }, [
+      _c("i", { staticClass: "fa fa-user bigicon" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "col-md-1 col-md-offset-2 text-center" }, [
+      _c("i", { staticClass: "fa fa-user bigicon" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "col-md-1 col-md-offset-2 text-center" }, [
+      _c("i", { staticClass: "fa fa-envelope-o bigicon" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "col-md-1 col-md-offset-2 text-center" }, [
+      _c("i", { staticClass: "fa fa-phone-square bigicon" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "col-md-1 col-md-offset-2 text-center" }, [
+      _c("i", { staticClass: "fa fa-phone-square bigicon" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "col-md-1 col-md-offset-2 text-center" }, [
+      _c("i", { staticClass: "fa fa-pencil-square-o bigicon" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("div", { staticClass: "col-md-12 text-center" }, [
+        _c(
+          "button",
+          { staticClass: "btn btn-primary btn-lg", attrs: { type: "submit" } },
+          [_vm._v("ENVIAR")]
+        )
       ])
     ])
   }
@@ -95523,6 +95746,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_plugins_vuetify__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/js/plugins/vuetify */ "./resources/js/plugins/vuetify.js");
 /* harmony import */ var _js_routes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/js/routes.js */ "./resources/js/routes.js");
 /* harmony import */ var _js_components_App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/js/components/App */ "./resources/js/components/App.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var vue_axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-axios */ "./node_modules/vue-axios/dist/vue-axios.min.js");
+/* harmony import */ var vue_axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue_axios__WEBPACK_IMPORTED_MODULE_6__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -95534,7 +95761,10 @@ __webpack_require__.r(__webpack_exports__);
 //importar las rutas desde vue routes
 
 
- // import Vuetify from "vuetify/lib";
+
+
+
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vue_axios__WEBPACK_IMPORTED_MODULE_6___default.a, axios__WEBPACK_IMPORTED_MODULE_5___default.a); // import Vuetify from "vuetify/lib";
 // require('./bootstrap');
 // window.Vue = require('vue');
 
