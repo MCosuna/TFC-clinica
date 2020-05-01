@@ -13,9 +13,11 @@ import Route from '@/js/routes.js';
 import App from '@/js/components/App';
 
 
-import axios from "axios";
-import VueAxios from "vue-axios";
-Vue.use(VueAxios, axios)
+// import axios from "axios";
+// import VueAxios from "vue-axios";
+// Vue.use(VueAxios, axios)
+window.VueAxios=require('vue-axios').default;
+window.Axios=require('axios').default;
 
 // import Vuetify from "vuetify/lib";
 // require('./bootstrap');
@@ -45,6 +47,10 @@ Vue.use(VueAxios, axios)
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+
+
+Vue.use(axios, VueAxios);
 
 const app = new Vue({
     el: '#app',

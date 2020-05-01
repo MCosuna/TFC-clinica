@@ -5,10 +5,13 @@
 
   <!-- -------------------------------------------------------------------- -->
   <div class="reserva container-fluid center ">
+
+
     <div class="row">
       <div class="col-md-12">
         <div class="well well-sm">
           <form class="form-horizontal" v-on:submit.prevent="crearCita" method="post">
+
             <fieldset>
               <legend class="text-center header">Reserva tu cita</legend>
               <!-- nombre del cliente -->
@@ -143,8 +146,12 @@ export default {
   created (){
 
   },
+  beforeSend: function(){
+    console.log( this.data);
+},
   mounted() {
     console.log("Component reserva mounted.");
+    console.log(this.cliente)
   },
   methods: {
        crearCita(){
@@ -152,11 +159,10 @@ export default {
             this.datos.push(response.data.cliente);
             this.cliente={name:'',email:'', lname:'', phone: '', message:'', dni:null};
             //console.log(response.data.cliente)
-            var parsedobj = JSON.parse(JSON.stringify(response.data));
-            console.log(parsedobj)
+           // var parsedobj = JSON.parse(JSON.stringify(response.data));
+            console.log(this.datos)
           },response =>{
-            this.errors=response.data;
-            //console.log(this.error)
+           
           } );
         }
   }

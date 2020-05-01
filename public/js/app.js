@@ -2179,6 +2179,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2195,8 +2198,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {},
+  beforeSend: function beforeSend() {
+    console.log(this.data);
+  },
   mounted: function mounted() {
     console.log("Component reserva mounted.");
+    console.log(this.cliente);
   },
   methods: {
     crearCita: function crearCita() {
@@ -2213,12 +2220,10 @@ __webpack_require__.r(__webpack_exports__);
           message: '',
           dni: null
         }; //console.log(response.data.cliente)
+        // var parsedobj = JSON.parse(JSON.stringify(response.data));
 
-        var parsedobj = JSON.parse(JSON.stringify(response.data));
-        console.log(parsedobj);
-      }, function (response) {
-        _this.errors = response.data; //console.log(this.error)
-      });
+        console.log(_this.datos);
+      }, function (response) {});
     }
   }
 });
@@ -95746,10 +95751,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_plugins_vuetify__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/js/plugins/vuetify */ "./resources/js/plugins/vuetify.js");
 /* harmony import */ var _js_routes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/js/routes.js */ "./resources/js/routes.js");
 /* harmony import */ var _js_components_App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/js/components/App */ "./resources/js/components/App.vue");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var vue_axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-axios */ "./node_modules/vue-axios/dist/vue-axios.min.js");
-/* harmony import */ var vue_axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue_axios__WEBPACK_IMPORTED_MODULE_6__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -95761,10 +95762,12 @@ __webpack_require__.r(__webpack_exports__);
 //importar las rutas desde vue routes
 
 
+ // import axios from "axios";
+// import VueAxios from "vue-axios";
+// Vue.use(VueAxios, axios)
 
-
-
-vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vue_axios__WEBPACK_IMPORTED_MODULE_6___default.a, axios__WEBPACK_IMPORTED_MODULE_5___default.a); // import Vuetify from "vuetify/lib";
+window.VueAxios = __webpack_require__(/*! vue-axios */ "./node_modules/vue-axios/dist/vue-axios.min.js")["default"];
+window.Axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")["default"]; // import Vuetify from "vuetify/lib";
 // require('./bootstrap');
 // window.Vue = require('vue');
 
@@ -95788,6 +95791,7 @@ vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vue_axios__WEBPACK_IMPORTED_MODUL
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(axios, VueAxios);
 var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   el: '#app',
   vuetify: _js_plugins_vuetify__WEBPACK_IMPORTED_MODULE_2__["default"],

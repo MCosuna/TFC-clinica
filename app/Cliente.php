@@ -11,9 +11,9 @@ class Cliente extends Model
     protected $table = 'cliente';
 
    // protected $fillable = ['name'];//protege contra la asignacion masiva de forma predeterminada
-    protected $primaryKey = 'dni';//definimos como clave principal 'dni'
-    protected $incrementing = false; //No se autoincrementa
-    protected $keyType = 'string';
+    //protected $primaryKey = 'dni';//definimos como clave principal 'dni'
+   // protected $incrementing = false; //No se autoincrementa
+   // protected $keyType = 'string';
     protected $fillable = ['dni', 'name', 'lname', 'phone','email', 'message']; //lista blanca de las cosas que podemos introducir 
     //en la base de datos.
 }

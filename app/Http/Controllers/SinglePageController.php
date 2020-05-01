@@ -11,20 +11,16 @@ class SinglePageController extends Controller
         return view('app');
     }
 
-    public function store(Request $request){
-       $this->validate($request, [
-           'dni' => 'required',
-           'name' => 'required',
-           'lname' => 'required',
-           'phone' => 'required',
-           'email' => 'required',
-           'message'=> 'required'
-       ]); 
-
-    //    Cliente::create($request->all());
-    //    return ;
-    $cliente = Cliente::create($request->all());
-    return response()->json(['cliente'=>$cliente]);
-    // return response()->json(['cliente'=>$request->all()]);
-    }
+    // public function store(Request $request){
+    //    $this->validate($request, [
+    //        'dni' => 'required',
+    //        'name' => 'required',
+    //        'lname' => 'required',
+    //        'email' => 'required',
+    //        'phone' => 'required',
+    //        'message'=> 'required'
+    //    ]); 
+    // $cliente = Cliente::create($request->all());
+    //  return response()->json(['cliente'=>$request->all()]);
+    // }
 }
