@@ -19,7 +19,7 @@
   </v-app>-->
 
   <div class="container">
-    <nav class="navbar navbar-expand-lg fixed-top menu">
+    <nav class="navbar navbar-expand-lg fixed-top menu clearfix" >
       <!-- <div class="container"> -->
       <router-link class="navbar-brand" tag="li" to="/">
         <img class="img-responsive" src="./img/LOGO2.png" alt width="30%" />
@@ -43,17 +43,11 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <!-- <a class="nav-link" href="#">
               <router-link tag="li" to="/reserva">RESERVA CITA</router-link>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <router-link tag="li" to="/reserva">CONTACTO</router-link>
-            </a>
-          </li>
-          <li>
-            <div class="dropdown btn-outline-secondary">
+            </a> -->
+
+             <div class="dropdown btn-outline-secondary">
               <button
                 class="btn dropdown-toggle"
                 type="button"
@@ -61,24 +55,57 @@
                 data-toggle="dropdown"
               >CONSULTA</button>
               <div class="dropdown-menu">
-                <button class="dropdown-item" type="button">CONSULTA ESTÉTICA</button>
-                <button class="dropdown-item" type="button">CONSULTA GENERAL</button>
+                <button class="dropdown-item" type="button">
+                  <router-link tag="li" to="/consultaEstetica">CONSULTA ESTÉTICA</router-link></button>
+
+                <button class="dropdown-item" type="button">
+                  <router-link tag="li" to="/consultaGeneral">CONSULTA GENERAL</router-link></button>
               </div>
             </div>
           </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">
+              <router-link tag="li" to="/reserva">RESERVA CITA</router-link>
+            </a>
+          </li>
+          <li>
+          
+             <a class="nav-link" href="#">
+              <router-link tag="li" to="/contacto">CONTACTO</router-link>
+            </a>
+           
+          </li>
         </ul>
       </div>
-      <!-- </div> -->
-      <!-- <hr style="height:2px;border-width:0;color:#282828;background-color:#282828; "> -->
+      
     </nav>
 
     <router-view></router-view>
   </div>
 </template>
-<style scoped>
-.container{
-    height: 100%;
+<script>
+$(function (){
+  $(document).scroll(function (){
+    var $nav = $('.navbar');
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+  });
+});
+</script>
+<style >
+.navbar.scrolled {
+  background-color: #aa1679 !important;
+  transition: background-color 1000ms linear;
+}
 
+.navbar li{
+  margin-right: 20px;
+}
+.container{
+    /* height: 100%; */
+
+}
+.navbar{
+  margin-bottom: 100px !important;
 }
 .navbar a:hover {
   color: #660358;

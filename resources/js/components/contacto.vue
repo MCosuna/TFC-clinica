@@ -1,5 +1,7 @@
 <template>
-
+  <div class="container">
+    <h2>componente de contacto</h2>
+  </div>
 </template>
 
 <script>
@@ -9,7 +11,9 @@ export default {
   }
 };
 </script>
+
 <style >
-
-
+.container {
+  margin-top: 25px;
+}
 </style>

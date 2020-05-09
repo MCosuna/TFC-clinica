@@ -18,7 +18,8 @@ class ClienteController extends Controller
             'message'=> 'required'
         ]); 
         $create = Cliente::create($request->all());
-        return response()->json(['status' => 'success' , 'msg'=>'cita creada con exito']);
+         
+        return response()->json($request);
  
      //    Cliente::create($request->all());
      //    return ;
@@ -35,5 +36,7 @@ class ClienteController extends Controller
         public function index(){
             
         }
+
+
 
 }

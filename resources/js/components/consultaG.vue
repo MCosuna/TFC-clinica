@@ -1,5 +1,7 @@
 <template>
-
+<div class="container">
+<h2>componente consulta general</h2>
+</div>
 </template>
 
 <script>
@@ -9,7 +11,10 @@ export default {
   }
 };
 </script>
-<style >
 
+<style >
+.container{
+    margin-top: 25px;
+}
 
 </style>

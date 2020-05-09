@@ -32,12 +32,13 @@
             <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
             <link href="{{asset('css/app.css')}}" rel="stylesheet">
     </head>
-    <body > 
+    <body  > 
         <div id="app"></div>
         <!-- script de prueba -->
     <script>
         window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token(),
-        ]); ?>
+        ]);
+         ?>
 
         </script>
         <script src="{{asset('js/app.js')}}"></script>

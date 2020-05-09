@@ -6,6 +6,8 @@
 import "./bootstrap"
 import Vue from 'vue';
 import vuetify from '@/js/plugins/vuetify';
+import MaterialInput from 'vue-material-input'
+
 //Vue.use(Vuetify);
 //importar las rutas desde vue routes
 import Route from '@/js/routes.js';
@@ -13,11 +15,11 @@ import Route from '@/js/routes.js';
 import App from '@/js/components/App';
 
 
-// import axios from "axios";
-// import VueAxios from "vue-axios";
+  import axios from "axios";
+  import VueAxios from "vue-axios";
 // Vue.use(VueAxios, axios)
-window.VueAxios=require('vue-axios').default;
-window.Axios=require('axios').default;
+// window.VueAxios=require('vue-axios').default;
+// window.Axios=require('axios').default;
 
 // import Vuetify from "vuetify/lib";
 // require('./bootstrap');
@@ -50,7 +52,8 @@ window.Axios=require('axios').default;
 
 
 
-Vue.use(axios, VueAxios);
+Vue.use(VueAxios,axios );
+Vue.use(MaterialInput);
 
 const app = new Vue({
     el: '#app',
