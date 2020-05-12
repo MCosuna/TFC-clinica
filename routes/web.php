@@ -24,5 +24,8 @@ Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
 // //Route::post('cliente', 'SinglePageController@index')->name('post');
 // Route::post('/reserva', 'SinglePageController@index');
 
+
+// Route::post('/', 'ClienteController@send');
 Route::get('/', 'ClienteController@home');
 Route::resource('/reserva', 'ClienteController');
+

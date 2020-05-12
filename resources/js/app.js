@@ -6,7 +6,7 @@
 import "./bootstrap"
 import Vue from 'vue';
 import vuetify from '@/js/plugins/vuetify';
-import MaterialInput from 'vue-material-input'
+import MaterialInput from 'vue-material-input';
 
 //Vue.use(Vuetify);
 //importar las rutas desde vue routes
