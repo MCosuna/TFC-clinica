@@ -20,12 +20,10 @@ use Illuminate\Support\Facades\Route;
 // con esta linea de codigo conseguimos que vue funcione
 Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
 
-// Route::resource('/reserva', 'SinglePageController@index', ['except' => 'show', 'create', 'edit']);
-// //Route::post('cliente', 'SinglePageController@index')->name('post');
-// Route::post('/reserva', 'SinglePageController@index');
 
-
-// Route::post('/', 'ClienteController@send');
-Route::get('/', 'ClienteController@home');
 Route::resource('/reserva', 'ClienteController');
+
+Route::get('/{any}', 'MailController@mail');
+Route::get('/', 'ClienteController@home');
+
 

@@ -2,9 +2,10 @@
   <!-- <div>
      <h2>Este es el componente de reserva</h2>
   </div>-->
-
+  
   <!-- -------------Component reserva------------------------------------------------------- -->
   <div class="reserva container-fluid center">
+    
     <div class="row">
       <div class="col-md-12">
         <div class="well well-sm">
@@ -93,13 +94,14 @@
               </div>
 
               <!-- selector de hora -->
-
+ 
               <!-- textarea con mensaje para el profesional -->
               <div class="form-group">
                 <span class="col-md-1 col-md-offset-2 text-center">
                   <i class="fa fa-pencil-square-o bigicon"></i>
                 </span>
                 <div class="col-md-8">
+                  <v-text-field :rules="rules"></v-text-field>
                   <textarea
                     class="form-control"
                     id="message"

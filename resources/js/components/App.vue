@@ -33,7 +33,9 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon">
+         <i class="fas fa-bars" style='font-size:35px;color:#aa1679;'></i>
+        </span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
@@ -77,7 +79,8 @@
           </li>
         </ul>
       </div>
-      
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
     </nav>
 
     <router-view></router-view>
@@ -122,13 +125,16 @@ $(function (){
 }
 
 @media only screen and (max-width: 981px) {
+  .navbar{
+     background-color:  #aa1679;
+     
+  }
   .btn-menu {
-    background-color: #660358;
-    color: #ffffff !important;
+    background-color: #ffffff ;
   }
   .navbar-toggler-icon {
-    color: #ffffff !important;
-    background-color: #ffffff !important;
+    display: table-cell;
   }
+
 }
 </style>

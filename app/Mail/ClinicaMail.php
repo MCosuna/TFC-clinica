@@ -10,17 +10,18 @@ use Illuminate\Queue\SerializesModels;
 class ClinicaMail extends Mailable 
 {
     use Queueable, SerializesModels;
-    public $subject='Mensaje de contactos';
-    public $contenido;
+  //  public $subject='Mensaje de contactos';
+    public $email;
+    
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($contenido)
+    public function __construct($email)
     {
-        $this->contenido = $contenido;
+        $this->email = $email;
         //
     }
 
@@ -31,7 +32,6 @@ class ClinicaMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Mail from MC')
-                    ->view('email');//vista del email ubicado en views\email.blade.php \\
+        return $this->view('mails.email');//vista del email ubicado en views\email.blade.php \\
     }
 }

@@ -7,7 +7,8 @@ import "./bootstrap"
 import Vue from 'vue';
 import vuetify from '@/js/plugins/vuetify';
 import MaterialInput from 'vue-material-input';
-
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate)
 //Vue.use(Vuetify);
 //importar las rutas desde vue routes
 import Route from '@/js/routes.js';
