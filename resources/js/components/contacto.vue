@@ -11,24 +11,58 @@
         </form>
       </div>
 
-      <div class="col">.col</div>
-    </div>
-  </div>
-</template>
+      <div class="col">
+            <h3>My Google Maps Demo</h3>
 
+            <div id="map"></div>
+
+      </div>
+    </div>
+    
+  </div>
+  
+</template>
+ <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcewRtBVYkKKxZvqKZWJuLQz4DhKdLyy0&callback=initMap&libraries=&v=weekly"
+      async
+      defer
+    ></script>
 <script>
 export default {
   data() {
+    return {
+
+    } 
 
   },
   mounted() {
     console.log("Component mounted.");
   },
-  methods: {}
+  methods: {
+      // Initialize and add the map
+  initMap() {
+    // The location of Uluru
+    var uluru = {lat: -25.344, lng: 131.036};
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 4, center: uluru});
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({position: uluru, map: map});
+    var marker = new google.maps.Marker({
+  position: uluru,
+  map: map
+});
+}
+  }
 };
 </script>
 
 <style >
+#map {
+   width: 100%;
+   height: 400px;
+   background-color: grey;
+ }
 @media only screen and (max-width: 400px) {
 
 #form {

@@ -101,7 +101,6 @@
                   <i class="fa fa-pencil-square-o bigicon"></i>
                 </span>
                 <div class="col-md-8">
-                  <v-text-field :rules="rules"></v-text-field>
                   <textarea
                     class="form-control"
                     id="message"

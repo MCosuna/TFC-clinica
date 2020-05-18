@@ -2161,12 +2161,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {},
+  data: function data() {
+    return {};
+  },
   mounted: function mounted() {
     console.log("Component mounted.");
   },
-  methods: {}
+  methods: {
+    // Initialize and add the map
+    initMap: function initMap() {
+      // The location of Uluru
+      var uluru = {
+        lat: -25.344,
+        lng: 131.036
+      }; // The map, centered at Uluru
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: uluru
+      }); // The marker, positioned at Uluru
+
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -2180,6 +2216,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -2492,7 +2529,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jspdf */ "./node_modules/jspdf/dist/jspdf.min.js");
 /* harmony import */ var jspdf__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jspdf__WEBPACK_IMPORTED_MODULE_0__);
-//
 //
 //
 //
@@ -7315,7 +7351,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n@media only screen and (max-width: 400px) {\n#form {\r\n  position: relative;\r\n  width: 350px;\r\n  margin: 50px auto 100px auto;\n}\n}\r\n/* medida normal */\n.container-fluid {\r\n  margin-top: 40px !important;\n}\n.col {\r\n  border: 1px solid black;\n}\ninput::-webkit-input-placeholder,\r\ntextarea::-webkit-input-placeholder {\r\n  color: #ffffff;\r\n  font-size: 1em;\n}\ninput:focus::-webkit-input-placeholder,\r\ntextarea:focus::-webkit-input-placeholder {\r\n  color: #bbb5af;\n}\ninput::-moz-placeholder,\r\ntextarea::-moz-placeholder {\r\n  color: #aca49c;\r\n  font-size: 0.875em;\n}\ninput:focus::-moz-placeholder,\r\ntextarea:focus::-moz-placeholder {\r\n  color: #bbb5af;\n}\ninput::-webkit-input-placeholder, textarea::-webkit-input-placeholder {\r\n  color: #660358;\r\n  font-size: 0.875em;\n}\ninput::-moz-placeholder, textarea::-moz-placeholder {\r\n  color: #660358;\r\n  font-size: 0.875em;\n}\ninput:-ms-input-placeholder, textarea:-ms-input-placeholder {\r\n  color: #660358;\r\n  font-size: 0.875em;\n}\ninput::-ms-input-placeholder, textarea::-ms-input-placeholder {\r\n  color: #660358;\r\n  font-size: 0.875em;\n}\ninput::placeholder,\r\ntextarea::placeholder {\r\n  color: #660358;\r\n  font-size: 0.875em;\n}\ninput:focus::-webkit-input-placeholder, textarea::focus::-webkit-input-placeholder {\r\n  color: #282828;\n}\ninput:focus::-moz-placeholder, textarea::focus::-moz-placeholder {\r\n  color: #282828;\n}\ninput:focus:-ms-input-placeholder, textarea::focus:-ms-input-placeholder {\r\n  color: #282828;\n}\ninput:focus::-ms-input-placeholder, textarea::focus::-ms-input-placeholder {\r\n  color: #282828;\n}\ninput:focus::placeholder,\r\ntextarea::focus::placeholder {\r\n  color: #282828;\n}\ninput::-ms-placeholder,\r\ntextarea::-ms-placeholder {\r\n  color: #aca49c;\r\n  font-size: 0.875em;\n}\ninput:focus::-ms-placeholder,\r\ntextarea:focus::-ms-placeholder {\r\n  color: #bbb5af;\n}\r\n\r\n/* on hover placeholder */\ninput:hover::-webkit-input-placeholder,\r\ntextarea:hover::-webkit-input-placeholder {\r\n  color: #e2dedb;\r\n  font-size: 0.875em;\n}\ninput:hover:focus::-webkit-input-placeholder,\r\ntextarea:hover:focus::-webkit-input-placeholder {\r\n  color: #cbc6c1;\n}\ninput:hover::-moz-placeholder,\r\ntextarea:hover::-moz-placeholder {\r\n  color: #e2dedb;\r\n  font-size: 0.875em;\n}\ninput:hover:focus::-moz-placeholder,\r\ntextarea:hover:focus::-moz-placeholder {\r\n  color: #f2e6e6;\r\n  font-size: 0.875EM;\n}\ninput:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder {\r\n  color: #f2e6e6;\r\n  font-size: 0.875em;\n}\ninput:hover::-moz-placeholder, textarea:hover::-moz-placeholder {\r\n  color: #f2e6e6;\r\n  font-size: 0.875em;\n}\ninput:hover:-ms-input-placeholder, textarea:hover:-ms-input-placeholder {\r\n  color: #f2e6e6;\r\n  font-size: 0.875em;\n}\ninput:hover::-ms-input-placeholder, textarea:hover::-ms-input-placeholder {\r\n  color: #f2e6e6;\r\n  font-size: 0.875em;\n}\ninput:hover::placeholder,\r\ntextarea:hover::placeholder {\r\n  color: #f2e6e6;\r\n  font-size: 0.875em;\n}\ninput:hover:focus::-webkit-input-placeholder, textarea:hover:focus::-webkit-input-placeholder {\r\n  color: #f2e6e6;\n}\ninput:hover:focus::-moz-placeholder, textarea:hover:focus::-moz-placeholder {\r\n  color: #f2e6e6;\n}\ninput:hover:focus:-ms-input-placeholder, textarea:hover:focus:-ms-input-placeholder {\r\n  color: #f2e6e6;\n}\ninput:hover:focus::-ms-input-placeholder, textarea:hover:focus::-ms-input-placeholder {\r\n  color: #f2e6e6;\n}\ninput:hover:focus::placeholder,\r\ntextarea:hover:focus::placeholder {\r\n  color: #f2e6e6;\n}\ninput:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder {\r\n  color: #e2dedb;\r\n  font-size: 0.875em;\n}\ninput:hover::-moz-placeholder, textarea:hover::-moz-placeholder {\r\n  color: #e2dedb;\r\n  font-size: 0.875em;\n}\ninput:hover:-ms-input-placeholder, textarea:hover:-ms-input-placeholder {\r\n  color: #e2dedb;\r\n  font-size: 0.875em;\n}\ninput:hover::-ms-input-placeholder, textarea:hover::-ms-input-placeholder {\r\n  color: #e2dedb;\r\n  font-size: 0.875em;\n}\ninput:hover::placeholder,\r\ntextarea:hover::placeholder {\r\n  color: #e2dedb;\r\n  font-size: 0.875em;\n}\ninput:hover:focus::-ms-placeholder,\r\ntextarea:hover::focus:-ms-placeholder {\r\n  color: #cbc6c1;\n}\nheader {\r\n  position: relative;\r\n  margin: 100px 0 25px 0;\r\n  font-size: 2em;\r\n  text-align: center;\r\n  letter-spacing: 7px;\r\n  color: #282828;\n}\n#form {\r\n  position: relative;\r\n  width: 500px;\r\n  margin: 50px auto 100px auto;\n}\ninput {\r\n  font-family: \"Lato\", sans-serif;\r\nfont-size: 18px;\r\n  width: 470px;\r\n  height: 50px;\r\n  padding: 0px 15px 0px 15px;\r\n\r\n  background: transparent;\r\n  outline: none;\r\n  color: #660358;\r\n\r\n  border: solid 1px #b3aca7;\r\n  border-bottom: none;\r\n\r\n  transition: all 0.3s ease-in-out;\r\n  -webkit-transition: all 0.3s ease-in-out;\r\n  -moz-transition: all 0.3s ease-in-out;\r\n  -ms-transition: all 0.3s ease-in-out;\n}\ninput:hover {\r\n background: #282828;\r\n  color: #f2e6e6;\n}\ntextarea {\r\n  width: 470px;\r\n  max-width: 470px;\r\n  height: 110px;\r\n  max-height: 110px;\r\n  padding: 15px;\r\n  background: transparent;\r\n  outline: none;\r\n  /* color: #726659; */\r\n  /* font-family: \"Lato\", sans-serif; */\r\n font-size: 18px;\r\n  border: solid 1px #b3aca7;\r\n  transition: all 0.3s ease-in-out;\r\n  -webkit-transition: all 0.3s ease-in-out;\r\n  -moz-transition: all 0.3s ease-in-out;\r\n  -ms-transition: all 0.3s ease-in-out;\n}\ntextarea:hover {\r\n  background: #282828;\r\n  color: #f2e6e6;\n}\n#submit {\r\n  padding: 0;\r\n  margin: -5px 0px 0px 0px;\r\n\r\n  /* font-family: \"Lato\", sans-serif; */\r\n  font-size: 20px;\r\n  color: #aa1679 ;\r\n\r\n  outline: none;\r\n  cursor: pointer;\r\n  background-color: #282828;\r\n  border: solid 1px #282828;;\r\n  border-top: none;\n}\n#submit:hover {\r\n    background: #aa1679;\r\n\r\n  color: #f2e6e6;\n}\r\n", ""]);
+exports.push([module.i, "\n#map {\r\n   width: 100%;\r\n   height: 400px;\r\n   background-color: grey;\n}\n@media only screen and (max-width: 400px) {\n#form {\r\n  position: relative;\r\n  width: 350px;\r\n  margin: 50px auto 100px auto;\n}\n}\r\n/* medida normal */\n.container-fluid {\r\n  margin-top: 40px !important;\n}\n.col {\r\n  border: 1px solid black;\n}\ninput::-webkit-input-placeholder,\r\ntextarea::-webkit-input-placeholder {\r\n  color: #ffffff;\r\n  font-size: 1em;\n}\ninput:focus::-webkit-input-placeholder,\r\ntextarea:focus::-webkit-input-placeholder {\r\n  color: #bbb5af;\n}\ninput::-moz-placeholder,\r\ntextarea::-moz-placeholder {\r\n  color: #aca49c;\r\n  font-size: 0.875em;\n}\ninput:focus::-moz-placeholder,\r\ntextarea:focus::-moz-placeholder {\r\n  color: #bbb5af;\n}\ninput::-webkit-input-placeholder, textarea::-webkit-input-placeholder {\r\n  color: #660358;\r\n  font-size: 0.875em;\n}\ninput::-moz-placeholder, textarea::-moz-placeholder {\r\n  color: #660358;\r\n  font-size: 0.875em;\n}\ninput:-ms-input-placeholder, textarea:-ms-input-placeholder {\r\n  color: #660358;\r\n  font-size: 0.875em;\n}\ninput::-ms-input-placeholder, textarea::-ms-input-placeholder {\r\n  color: #660358;\r\n  font-size: 0.875em;\n}\ninput::placeholder,\r\ntextarea::placeholder {\r\n  color: #660358;\r\n  font-size: 0.875em;\n}\ninput:focus::-webkit-input-placeholder, textarea::focus::-webkit-input-placeholder {\r\n  color: #282828;\n}\ninput:focus::-moz-placeholder, textarea::focus::-moz-placeholder {\r\n  color: #282828;\n}\ninput:focus:-ms-input-placeholder, textarea::focus:-ms-input-placeholder {\r\n  color: #282828;\n}\ninput:focus::-ms-input-placeholder, textarea::focus::-ms-input-placeholder {\r\n  color: #282828;\n}\ninput:focus::placeholder,\r\ntextarea::focus::placeholder {\r\n  color: #282828;\n}\ninput::-ms-placeholder,\r\ntextarea::-ms-placeholder {\r\n  color: #aca49c;\r\n  font-size: 0.875em;\n}\ninput:focus::-ms-placeholder,\r\ntextarea:focus::-ms-placeholder {\r\n  color: #bbb5af;\n}\r\n\r\n/* on hover placeholder */\ninput:hover::-webkit-input-placeholder,\r\ntextarea:hover::-webkit-input-placeholder {\r\n  color: #e2dedb;\r\n  font-size: 0.875em;\n}\ninput:hover:focus::-webkit-input-placeholder,\r\ntextarea:hover:focus::-webkit-input-placeholder {\r\n  color: #cbc6c1;\n}\ninput:hover::-moz-placeholder,\r\ntextarea:hover::-moz-placeholder {\r\n  color: #e2dedb;\r\n  font-size: 0.875em;\n}\ninput:hover:focus::-moz-placeholder,\r\ntextarea:hover:focus::-moz-placeholder {\r\n  color: #f2e6e6;\r\n  font-size: 0.875EM;\n}\ninput:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder {\r\n  color: #f2e6e6;\r\n  font-size: 0.875em;\n}\ninput:hover::-moz-placeholder, textarea:hover::-moz-placeholder {\r\n  color: #f2e6e6;\r\n  font-size: 0.875em;\n}\ninput:hover:-ms-input-placeholder, textarea:hover:-ms-input-placeholder {\r\n  color: #f2e6e6;\r\n  font-size: 0.875em;\n}\ninput:hover::-ms-input-placeholder, textarea:hover::-ms-input-placeholder {\r\n  color: #f2e6e6;\r\n  font-size: 0.875em;\n}\ninput:hover::placeholder,\r\ntextarea:hover::placeholder {\r\n  color: #f2e6e6;\r\n  font-size: 0.875em;\n}\ninput:hover:focus::-webkit-input-placeholder, textarea:hover:focus::-webkit-input-placeholder {\r\n  color: #f2e6e6;\n}\ninput:hover:focus::-moz-placeholder, textarea:hover:focus::-moz-placeholder {\r\n  color: #f2e6e6;\n}\ninput:hover:focus:-ms-input-placeholder, textarea:hover:focus:-ms-input-placeholder {\r\n  color: #f2e6e6;\n}\ninput:hover:focus::-ms-input-placeholder, textarea:hover:focus::-ms-input-placeholder {\r\n  color: #f2e6e6;\n}\ninput:hover:focus::placeholder,\r\ntextarea:hover:focus::placeholder {\r\n  color: #f2e6e6;\n}\ninput:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder {\r\n  color: #e2dedb;\r\n  font-size: 0.875em;\n}\ninput:hover::-moz-placeholder, textarea:hover::-moz-placeholder {\r\n  color: #e2dedb;\r\n  font-size: 0.875em;\n}\ninput:hover:-ms-input-placeholder, textarea:hover:-ms-input-placeholder {\r\n  color: #e2dedb;\r\n  font-size: 0.875em;\n}\ninput:hover::-ms-input-placeholder, textarea:hover::-ms-input-placeholder {\r\n  color: #e2dedb;\r\n  font-size: 0.875em;\n}\ninput:hover::placeholder,\r\ntextarea:hover::placeholder {\r\n  color: #e2dedb;\r\n  font-size: 0.875em;\n}\ninput:hover:focus::-ms-placeholder,\r\ntextarea:hover::focus:-ms-placeholder {\r\n  color: #cbc6c1;\n}\nheader {\r\n  position: relative;\r\n  margin: 100px 0 25px 0;\r\n  font-size: 2em;\r\n  text-align: center;\r\n  letter-spacing: 7px;\r\n  color: #282828;\n}\n#form {\r\n  position: relative;\r\n  width: 500px;\r\n  margin: 50px auto 100px auto;\n}\ninput {\r\n  font-family: \"Lato\", sans-serif;\r\nfont-size: 18px;\r\n  width: 470px;\r\n  height: 50px;\r\n  padding: 0px 15px 0px 15px;\r\n\r\n  background: transparent;\r\n  outline: none;\r\n  color: #660358;\r\n\r\n  border: solid 1px #b3aca7;\r\n  border-bottom: none;\r\n\r\n  transition: all 0.3s ease-in-out;\r\n  -webkit-transition: all 0.3s ease-in-out;\r\n  -moz-transition: all 0.3s ease-in-out;\r\n  -ms-transition: all 0.3s ease-in-out;\n}\ninput:hover {\r\n background: #282828;\r\n  color: #f2e6e6;\n}\ntextarea {\r\n  width: 470px;\r\n  max-width: 470px;\r\n  height: 110px;\r\n  max-height: 110px;\r\n  padding: 15px;\r\n  background: transparent;\r\n  outline: none;\r\n  /* color: #726659; */\r\n  /* font-family: \"Lato\", sans-serif; */\r\n font-size: 18px;\r\n  border: solid 1px #b3aca7;\r\n  transition: all 0.3s ease-in-out;\r\n  -webkit-transition: all 0.3s ease-in-out;\r\n  -moz-transition: all 0.3s ease-in-out;\r\n  -ms-transition: all 0.3s ease-in-out;\n}\ntextarea:hover {\r\n  background: #282828;\r\n  color: #f2e6e6;\n}\n#submit {\r\n  padding: 0;\r\n  margin: -5px 0px 0px 0px;\r\n\r\n  /* font-family: \"Lato\", sans-serif; */\r\n  font-size: 20px;\r\n  color: #aa1679 ;\r\n\r\n  outline: none;\r\n  cursor: pointer;\r\n  background-color: #282828;\r\n  border: solid 1px #282828;;\r\n  border-top: none;\n}\n#submit:hover {\r\n    background: #aa1679;\r\n\r\n  color: #f2e6e6;\n}\r\n", ""]);
 
 // exports
 
@@ -39748,7 +39784,11 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col" }, [_vm._v(".col")])
+        _c("div", { staticClass: "col" }, [
+          _c("h3", [_vm._v("My Google Maps Demo")]),
+          _vm._v(" "),
+          _c("div", { attrs: { id: "map" } })
+        ])
       ])
     ])
   }
@@ -40452,45 +40492,34 @@ var render = function() {
                 _c("div", { staticClass: "form-group" }, [
                   _vm._m(5),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "col-md-8" },
-                    [
-                      _c("v-text-field", { attrs: { rules: _vm.rules } }),
-                      _vm._v(" "),
-                      _c("textarea", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.cliente.message,
-                            expression: "cliente.message"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          id: "message",
-                          name: "message",
-                          placeholder: "Déjanos un mensaje",
-                          rows: "7"
-                        },
-                        domProps: { value: _vm.cliente.message },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.cliente,
-                              "message",
-                              $event.target.value
-                            )
-                          }
+                  _c("div", { staticClass: "col-md-8" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.cliente.message,
+                          expression: "cliente.message"
                         }
-                      })
-                    ],
-                    1
-                  )
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        id: "message",
+                        name: "message",
+                        placeholder: "Déjanos un mensaje",
+                        rows: "7"
+                      },
+                      domProps: { value: _vm.cliente.message },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.cliente, "message", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
                 ]),
                 _vm._v(" "),
                 _vm._m(6)
