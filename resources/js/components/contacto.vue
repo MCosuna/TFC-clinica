@@ -12,52 +12,133 @@
       </div>
 
       <div class="col">
-            <h3>My Google Maps Demo</h3>
+            <header>¿Dónde nos encontramos?</header>
 
-            <div id="map"></div>
+ <GmapMap style="width: 600px; height: 280px;" :zoom="12" :center="{lat:  37.1881700, lng: -3.6066700}"
+        ref="map">
+      <GmapMarker 
+        :position="{lat: 37.1681467, lng: -3.6040124}" 
+
+        />
+    </GmapMap>
+
+<!-- queda calcular la distancia entre dos puntos -->
 
       </div>
+     
     </div>
-    
+     <div class="row">
+        <div class="col"> 
+          <!-- footer -->
+           
+
+    <!-- Footer -->
+    <footer class="page-footer font-small teal pt-4">
+      <!-- Footer Text -->
+      <div class="container-fluid text-center text-md-left">
+        <!-- Grid row -->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-6 mt-md-0 mt-3">
+            <!-- Content -->
+            <h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
+            <p>
+              
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <hr class=" w-100 d-md-none pb-3" />
+
+          <!-- Grid column -->
+          <div class="col-md-6 mb-md-0 mb-3">
+            <!-- Content -->
+            <h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
+            <p>
+             
+            </p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+      <!-- Footer Text -->
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">
+        © 2020 Copyright:
+        <a href="https://github.com/MCosuna">Maria del Carmen Osuna Ojeda</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+        </div>
+      </div>
   </div>
   
 </template>
- <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcewRtBVYkKKxZvqKZWJuLQz4DhKdLyy0&callback=initMap&libraries=&v=weekly"
-      async
-      defer
-    ></script>
+
+   
 <script>
 export default {
   data() {
+  
     return {
+      markers: [],
+      place: null,
+    };
 
-    } 
 
   },
+ 
   mounted() {
     console.log("Component mounted.");
+
   },
   methods: {
-      // Initialize and add the map
-  initMap() {
-    // The location of Uluru
-    var uluru = {lat: -25.344, lng: 131.036};
-    // The map, centered at Uluru
-    var map = new google.maps.Map(
-        document.getElementById('map'), {zoom: 4, center: uluru});
-    // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({position: uluru, map: map});
-    var marker = new google.maps.Marker({
-  position: uluru,
-  map: map
-});
-}
+    generate() {
+      this.center = {
+        lat: 37.1881700,
+        lng: -3.6066700,
+      }
+      this.markers = _.range(30)
+        .map(m => ({
+          latLng: {
+            lat: 37.1881700,
+            lng:-3.6066700,
+          }
+        }))
+    }
   }
+//     geolocate: function() {
+//       navigator.geolocation.getCurrentPosition(position => {
+//         this.center = {
+//           lat: position.coords.latitude,
+//           lng: position.coords.longitude
+//         };
+//       });
+//     }
+  // }
+      
 };
 </script>
 
 <style >
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.footer{
+  padding : 0;
+  margin: 0 !important;
+  width: 100vh !important;
+  height: 100%;
+}
+.row{
+   margin: 0 !important;
+}
 #map {
    width: 100%;
    height: 400px;

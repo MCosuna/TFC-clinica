@@ -7,6 +7,17 @@ import "./bootstrap"
 import Vue from 'vue';
 import vuetify from '@/js/plugins/vuetify';
 import MaterialInput from 'vue-material-input';
+import * as VueGoogleMaps from "vue2-google-maps";
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: "AIzaSyBcewRtBVYkKKxZvqKZWJuLQz4DhKdLyy0",
+    libraries: "places" // necessary for places input
+  }
+});
+
+// Vue.component('contacto', VueGoogleMaps.Map);
+
 import Vuelidate from 'vuelidate'
 Vue.use(Vuelidate)
 //Vue.use(Vuetify);
@@ -18,14 +29,8 @@ import App from '@/js/components/App';
 
   import axios from "axios";
   import VueAxios from "vue-axios";
-// Vue.use(VueAxios, axios)
-// window.VueAxios=require('vue-axios').default;
-// window.Axios=require('axios').default;
 
-// import Vuetify from "vuetify/lib";
-// require('./bootstrap');
 
-// window.Vue = require('vue');
 
 /**
  * The following block of code may be used to automatically register your

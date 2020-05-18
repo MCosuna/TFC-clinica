@@ -1,25 +1,6 @@
 <template>
-  <!-- <v-app>
-        <v-navigation-drawer app></v-navigation-drawer>
-        <v-app-bar
-            app
-            color="indigo"
-            dark
-  >-->
-  <!-- <v-app-bar-nav-icon @click.stop="drawer = ! drawer" /> -->
-  <!-- <v-toolbar-title>Clinica dental macia</v-toolbar-title>
-        </v-app-bar>
-        <v-content>
-            <v-container>
-  <router-link tag="li" to="/">Inicio</router-link>-->
-  <!-- <router-link tag="li" to="/ExampleComponent">ExampleComponent</router-link> -->
-  <!-- <router-view></router-view>
-            </v-container>
-        </v-content>
-  </v-app>-->
-
   <div class="container">
-    <nav class="navbar navbar-expand-lg fixed-top menu clearfix" >
+    <nav class="navbar navbar-expand-lg fixed-top menu clearfix">
       <!-- <div class="container"> -->
       <router-link class="navbar-brand" tag="li" to="/">
         <img class="img-responsive" src="./img/LOGO2.png" alt width="30%" />
@@ -34,7 +15,7 @@
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon">
-         <i class="fas fa-bars" style='font-size:35px;color:#aa1679;'></i>
+          <i class="fas fa-bars" style="font-size:35px;color:#aa1679;"></i>
         </span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -47,9 +28,9 @@
           <li class="nav-item">
             <!-- <a class="nav-link" href="#">
               <router-link tag="li" to="/reserva">RESERVA CITA</router-link>
-            </a> -->
+            </a>-->
 
-             <div class="dropdown btn-outline-secondary">
+            <div class="dropdown btn-outline-secondary">
               <button
                 class="btn dropdown-toggle"
                 type="button"
@@ -58,39 +39,54 @@
               >CONSULTA</button>
               <div class="dropdown-menu">
                 <button class="dropdown-item" type="button">
-                  <router-link tag="li" to="/consultaEstetica">CONSULTA ESTÉTICA</router-link></button>
+                  <router-link tag="li" to="/consultaEstetica">CONSULTA ESTÉTICA</router-link>
+                </button>
 
                 <button class="dropdown-item" type="button">
-                  <router-link tag="li" to="/consultaGeneral">CONSULTA GENERAL</router-link></button>
+                  <router-link tag="li" to="/consultaGeneral">CONSULTA GENERAL</router-link>
+                </button>
               </div>
             </div>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">
+            <a class="nav-link" href="#">
               <router-link tag="li" to="/reserva">RESERVA CITA</router-link>
             </a>
           </li>
           <li>
-          
-             <a class="nav-link" href="#">
+            <a class="nav-link" href="#">
               <router-link tag="li" to="/contacto">CONTACTO</router-link>
             </a>
-           
           </li>
         </ul>
       </div>
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
+      <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous"
+      />
     </nav>
-
+    <!-- <contacto/> -->
     <router-view></router-view>
   </div>
 </template>
 <script>
-$(function (){
-  $(document).scroll(function (){
-    var $nav = $('.navbar');
-    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+import contacto from "./components/contacto";
+
+export default {
+  name: "App",
+  components: {
+    // contacto
+  }
+};
+</script>
+
+<script>
+$(function() {
+  $(document).scroll(function() {
+    var $nav = $(".navbar");
+    $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
   });
 });
 </script>
@@ -100,14 +96,13 @@ $(function (){
   transition: background-color 1000ms linear;
 }
 
-.navbar li{
+.navbar li {
   margin-right: 20px;
 }
-.container{
-    /* height: 100%; */
-
+.container {
+  /* height: 100%; */
 }
-.navbar{
+.navbar {
   margin-bottom: 100px !important;
 }
 .navbar a:hover {
@@ -125,16 +120,14 @@ $(function (){
 }
 
 @media only screen and (max-width: 981px) {
-  .navbar{
-     background-color:  #aa1679;
-     
+  .navbar {
+    background-color: #aa1679;
   }
   .btn-menu {
-    background-color: #ffffff ;
+    background-color: #ffffff;
   }
   .navbar-toggler-icon {
     display: table-cell;
   }
-
 }
 </style>
