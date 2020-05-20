@@ -8,6 +8,10 @@ import Vue from 'vue';
 import vuetify from '@/js/plugins/vuetify';
 import MaterialInput from 'vue-material-input';
 import * as VueGoogleMaps from "vue2-google-maps";
+import Form from './components/Form';
+
+window.Form = Form;
+
 
 Vue.use(VueGoogleMaps, {
   load: {
