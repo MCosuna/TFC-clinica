@@ -37,6 +37,7 @@
         "vue-axios": "^2.1.5",
         "vue-material-input": "^1.2.0",
         "vue-pdf": "^4.0.8",
+        "vue2-editor": "^2.10.2",
         "vue2-google-maps": "^0.10.7",
         "vuelidate": "^0.7.5",
         "vuetify": "^2.2.22"

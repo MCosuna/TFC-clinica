@@ -3,10 +3,10 @@
     <div class="row">
       <div class="col">
         <header>Contacta con nosotros:</header>
-        <form id="form" class="topBefore">
-          <input id="name" type="text" placeholder="Nombre" />
-          <input id="email" type="text" placeholder="E-mail:" />
-          <textarea id="message" type="text" placeholder="Deja tu mensaje..."></textarea>
+        <form id="form" class="topBefore" method="post" v-on:submit.prevent="crearContacto" >
+          <input id="name" type="text" placeholder="Nombre" v-model="cliente.name" />
+          <input id="email" type="text" placeholder="E-mail:" v-model="cliente.email" />
+          <textarea id="message" type="text" placeholder="Deja tu mensaje..." v-model="cliente.message"></textarea>
           <input id="submit" type="submit" value="ENVIAR" />
         </form>
       </div>
@@ -27,8 +27,8 @@
       </div>
      
     </div>
-     <div class="row">
-        <div class="col"> 
+     <!-- <div class="row">
+        <div class="col">  -->
           <!-- footer -->
            
 
@@ -73,8 +73,8 @@
     </footer>
 
         </div>
-      </div>
-  </div>
+      <!-- </div>
+  </div> -->
   
 </template>
 
@@ -86,6 +86,13 @@ export default {
     return {
       markers: [],
       place: null,
+      datos: [],
+      cliente:{
+        name: '',
+        email: '',
+        message: '',
+      },
+      show : false,
     };
 
 
@@ -108,6 +115,31 @@ export default {
             lng:-3.6066700,
           }
         }))
+    },
+    crearContacto(){
+      this.$http.post("/contacto/", this.cliente).then(
+        response => {
+          this.datos.push(response.data.cliente);
+          this.cliente = {
+            name: "",
+            email: "",
+            message: "",
+          };
+          console.log(response.data.name);
+          console.log(response.data.email);
+          console.log(response.data.message);
+
+          var n = JSON.parse(JSON.stringify(response.data.name));
+          var correo = JSON.parse(JSON.stringify(response.data.email));
+          var message = JSON.parse(JSON.stringify(response.data.message));
+                  
+         
+        },
+        response => {
+          console.log("response error: "+response);
+        }
+      );
+
     }
   }
 //     geolocate: function() {
@@ -159,7 +191,7 @@ body {
   margin-top: 40px !important;
 }
 .col {
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 

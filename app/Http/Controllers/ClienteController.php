@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Mail;
 class ClienteController extends Controller
 {
     public function store(Request $request){
-        // Session::flash('name', $name);
 
         $this->validate($request, [
             'dni' => 'required',

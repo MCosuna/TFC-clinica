@@ -9,6 +9,8 @@ import vuetify from '@/js/plugins/vuetify';
 import MaterialInput from 'vue-material-input';
 import * as VueGoogleMaps from "vue2-google-maps";
 import Form from './components/Form';
+import Vue2Editor from "vue2-editor";
+Vue.use(Vue2Editor);
 
 window.Form = Form;
 

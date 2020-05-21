@@ -81,9 +81,9 @@
       </div>
       <button type="submit" class="btn btn-success">Enviar</button>
     </form>
-    <div v-show="showpaypal == true" class="container">
+    <div class="container">
       <div class="row text-center">
-        <div class="w-100 text-center" >
+        <div class="w-100 text-center">
           <h5
             class="mb-3 text-center"
           >Gracias por confiar en clinica Macia, su sonrisa es lo más importante</h5>
@@ -121,13 +121,13 @@ export default {
       paidFor: false,
       product: {
         price: 50,
-        description: "backlink from"
+        description: "Mari Carmen Osuna"
       },
       form: new Form({
         email: "",
         title: "",
         shortdescription: "",
-        description: "",
+        description: ""
       })
     };
   },
@@ -162,7 +162,9 @@ export default {
             this.data;
             this.paidFor = true;
             this.loadding = false;
-            window.location.href = "./consultaG/" + this.resp;
+            window.location.href = "./consultaG/";
+             jQuery.support.cors = true;
+
           },
           onError: err => {
             console.log(err);
@@ -182,7 +184,7 @@ export default {
       axios
         .post("/consultaG", data)
         .then(response => {
-          this.title= '';
+          this.title = "";
           this.form.reset();
           this.showpaypal = true;
           this.resp = response.data;

@@ -349,7 +349,7 @@ right: 0;
 
 .page-footer {
   background-color: #aa1679;
-  width: 100%;
+  /* width: 100%; */
   margin:0px !important;
   height: 100%;
 
