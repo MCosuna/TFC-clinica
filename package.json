@@ -1,6 +1,6 @@
 {
     "private": true,
-		"name":"Clinica Macias",
+		"name":"clinic",
 	  "description":"Mi descripcion",
 		"engines": {
 				"node": "12.16.3"
