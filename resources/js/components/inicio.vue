@@ -1,48 +1,34 @@
 <template>
-  <div class="container-fluid">
-    
-    <div class="row ">
-      <!-- <div class="col-md-12 ">
-        <br />
-      </div> -->
-      <div class="col-md-6 prueba1" >
-        <h1 class="display-4 colorG">Clínica dental Macía</h1>
-        <p class="parrafo">
-         Horario: L-V  
-
-        </p>
-      </div>
-      <div class="col-md-6">
-        <!-- carousel con img de la clinica -->
-        <div id="demo" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" class="active"></li>
-            <li data-target="#demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
-          </ul>
-
-          <!-- The slideshow -->
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="./img/silla.jpg" alt="Silla"  />
-            </div>
-            <div class="carousel-item">
-              <img src="./img/pared.jpg" alt="pared" />
-            </div>
-            <div class="carousel-item">
-              <img src="./img/maquina.jpg" alt="maquina" />
-            </div>
+<div>
+   <!-- Page Header -->
+  <header class="masthead" style="background-image: url(https://image.freepik.com/foto-gratis/herramientas-dentista-encuentran-mascara-protectora-espejo-pinzas-raspador-plantilla-publicidad-o-blog_121946-1275.jpg)">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Clínica Dental Macía</h1>
+            <span class="subheading">Queremos verte sonreir</span>
           </div>
-
-          <!-- Left and right controls -->
-          <a class="carousel-control-prev" href="#demo" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </a>
-          <a class="carousel-control-next" href="#demo" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </a>
         </div>
+      </div>
+    </div>
+  </header>
+
+   <div class="overlay"></div>
+  <div class="container">
+     <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h3  id="colorMorao"  class=text-center>Horario</h3>
+            <h4 id="colorMorao" class="subheading text-center">Lunes a Viernes: 9:00 / 20:00</h4>
+          </div>
+        </div>
+      </div>
+
+    <div class="row ">
+    
+     <!-- aqui iba carousel -->
       </div>
     </div>
     <hr style="height:2px;border-width:0;color:#660358;background-color:#660358; opacity: 0.3;" />
@@ -63,7 +49,7 @@
                 data-toggle="modal"
                 data-target="#modalDiscount"
               >
-                +info
+                ¿Quieres saber más?
               </button>
 
               <!--Modal: modalDiscount-->
@@ -289,8 +275,9 @@
     </footer>
     <!-- Footer -->
   </div>
-  
+  </div>
 </template>
+ <script src="js/clean-blog.min.js"></script>
 
 <script>
 export default {
@@ -314,14 +301,14 @@ export default {
 }
 
 .container-fluid {
-position: absolute;
-margin-left: auto;
+ /* position: absolute;  */
+/* margin-left: auto;
 margin-right: auto;
 left: 0;
 right: 0;
   height: 100%;
   width: 100%;
-  margin: 0 !important;
+  margin: 0 !important;  */
 }
 
 
@@ -354,4 +341,18 @@ right: 0;
   height: 100%;
 
 }
+header.masthead {
+    margin-bottom: 25px;
+    background: no-repeat center center;
+    background-attachment: scroll;
+    position: relative;
+    background-size: cover;
+    color: #660358;
+    /* background: snow; */
+
+}
+#colorMorao{
+ color: #660358;
+}
+
 </style>   

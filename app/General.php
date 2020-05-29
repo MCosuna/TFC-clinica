@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class General extends Model
 {
-    protected $table = "consultaGeneral";
+    protected $table = "congeneral";
     protected $fillable =
     [
         'email',

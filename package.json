@@ -1,9 +1,9 @@
 {
     "private": true,
-		"name":"clinic",
-	  "description":"Mi descripcion",
-		"engines": {
-				"node": "12.16.3"
+    "name": "clinic",
+    "description": "Mi descripcion",
+    "engines": {
+        "node": "12.16.3"
     },
     "scripts": {
         "dev": "npm run development",
@@ -38,6 +38,7 @@
         "jspdf": "^1.5.3",
         "jspdf-autotable": "^3.5.3",
         "save": "^2.4.0",
+        "startbootstrap-clean-blog": "^5.0.8",
         "vform": "^1.0.1",
         "vue-axios": "^2.1.5",
         "vue-material-input": "^1.2.0",

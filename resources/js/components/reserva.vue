@@ -6,7 +6,7 @@
   <!-- -------------Component reserva------------------------------------------------------- -->
   <div class="reserva container-fluid center">
     
-    <div class="row">
+    <div class="row" id="abs-center">
       <div class="col-md-12">
         <div class="well well-sm">
           <form class="form-horizontal" v-on:submit.prevent="crearCita" method="post">
@@ -47,7 +47,7 @@
               <!-- email del cliente para enviar la cita -->
               <div class="form-group">
                 <span class="col-md-1 col-md-offset-2 text-center">
-                  <i class="fa fa-envelope-o bigicon"></i>
+                  <i class="fas fa-at bigicon"></i>
                 </span>
                 <div class="col-md-8">
                   <input
@@ -79,7 +79,7 @@
               <!-- dni que funciona como clave principal -->
               <div class="form-group">
                 <span class="col-md-1 col-md-offset-2 text-center">
-                  <i class="fa fa-phone-square bigicon"></i>
+                  <i class="fas fa-user-check bigicon"></i>
                 </span>
                 <div class="col-md-8">
                   <input
@@ -98,7 +98,7 @@
               <!-- textarea con mensaje para el profesional -->
               <div class="form-group">
                 <span class="col-md-1 col-md-offset-2 text-center">
-                  <i class="fa fa-pencil-square-o bigicon"></i>
+                  <i class="fas fa-inbox bigicon"></i>
                 </span>
                 <div class="col-md-8">
                   <textarea
@@ -220,5 +220,11 @@ export default {
 .form-horizontal {
   width: 100%;
   float: inherit;
+}
+#abs-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 </style>

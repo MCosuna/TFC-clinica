@@ -16,7 +16,7 @@ class GeneralController extends Controller
             'email' => 'required',
         ]); 
 
-        $create = General::create($request->all());        
+        $create = General::create($request->post());        
         return response()->json($request);
  
      }

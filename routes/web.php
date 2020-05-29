@@ -21,9 +21,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
 
 Route::resource('/contacto', 'ContactoController');
-Route::get('/', 'ContactoController@home');
+// Route::get('/', 'ContactoController@home');
 
 Route::resource('/reserva', 'ClienteController');
+Route::resource('/consultaGeneral', 'GeneralController');
+// Route::get('/', 'GeneralController@home');
+
+Route::resource('/consultaEstetica', 'EsteticaController');
+// Route::get('/', 'EsteticaController@home');
+
 
 Route::get('/{any}', 'MailController@mail');
-Route::get('/', 'ClienteController@home');
+// Route::get('/', 'ClienteController@home');

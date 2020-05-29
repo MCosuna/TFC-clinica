@@ -1,11 +1,36 @@
 <template>
-  <!-- <div class="container">
-<h2>componente consulta general</h2>
-  <div id="paypal-button-container"></div>
-
-  </div>-->
-
   <div class="container">
+
+        <!-- carousel con img de la clinica -->
+        <div id="demo" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+          </ul>
+
+          <!-- The slideshow -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./img/silla.jpg" alt="Silla"  />
+            </div>
+            <div class="carousel-item">
+              <img src="./img/pared.jpg" alt="pared" />
+            </div>
+            <div class="carousel-item">
+              <img src="./img/maquina.jpg" alt="maquina" />
+            </div>
+          </div>
+
+          <!-- Left and right controls -->
+          <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
     <form
       v-if="showpaypal === false"
       autocomplete="nofill"
@@ -71,7 +96,23 @@
         ></div>
       </div>
       <div class="form-group">
-        <vue-editor v-model="form.description" />
+        <textarea
+          :class="{ 'is-invalid' : form.errors.has('description') }"
+          class="form-control"
+          id="description"
+          name="description"
+          placeholder="Deja una descripción"
+          rows="7"
+          v-model="form.description"
+          @keydown="form.errors.clear('description')"
+        ></textarea>
+        <div
+          class="invalid-feedback"
+          v-show="form.errors.has('description')"
+          v-text="form.errors.get('description')"
+        ></div>
+
+        <!-- <vue-editor v-model="form.description" /> -->
       </div>
       <div class="form-group">
         <label for>
@@ -90,7 +131,7 @@
           <h5 class="mb-3 text-center">Por favor, ingrese 50€ para conseguir su bono</h5>
         </div>
 
-        <div class="w-100">
+        <div class="w-100" v-show="showpaypal === true">
           <div class="mx-auto w-50" ref="paypal"></div>
         </div>
       </div>
@@ -112,7 +153,7 @@
 //   }
 // };
 export default {
-  props: ["categories", "subcategories"],
+  // props: ["categories"],
   data() {
     return {
       loaded: false,
@@ -162,9 +203,8 @@ export default {
             this.data;
             this.paidFor = true;
             this.loadding = false;
-            window.location.href = "./consultaG/";
-             jQuery.support.cors = true;
-
+            window.location.href = "./consultaGeneral/";
+            jQuery.support.cors = true;
           },
           onError: err => {
             console.log(err);
@@ -182,7 +222,7 @@ export default {
       // data.append("category_id", this.form.category_id);
 
       axios
-        .post("/consultaG", data)
+        .post("/consultaGeneral", data)
         .then(response => {
           this.title = "";
           this.form.reset();
@@ -205,5 +245,11 @@ export default {
 <style >
 .container {
   margin-top: 25px;
+}
+
+.carousel-inner img {
+    width: 100%;
+
+    height: -webkit-fill-available;
 }
 </style>

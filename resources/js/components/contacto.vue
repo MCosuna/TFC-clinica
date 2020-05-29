@@ -142,15 +142,7 @@ export default {
 
     }
   }
-//     geolocate: function() {
-//       navigator.geolocation.getCurrentPosition(position => {
-//         this.center = {
-//           lat: position.coords.latitude,
-//           lng: position.coords.longitude
-//         };
-//       });
-//     }
-  // }
+
       
 };
 </script>
@@ -192,6 +184,9 @@ body {
 }
 .col {
   /* border: 1px solid black; */
+}
+.gm-style{
+  position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;
 }
 
 
