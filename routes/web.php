@@ -31,5 +31,5 @@ Route::resource('/consultaEstetica', 'EsteticaController');
 // Route::get('/', 'EsteticaController@home');
 
 
-Route::get('/{any}', 'MailController@mail');
+// Route::get('/{any}', 'MailController@mail');
 // Route::get('/', 'ClienteController@home');
