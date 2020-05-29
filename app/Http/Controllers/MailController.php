@@ -30,7 +30,6 @@ class MailController extends Controller
       // $email = 'cita almacenada';
        Mail::to('osunaojeda@gmail.com')->send(new ClinicaMail($email));
        
-       return view('App');
     }
 
 }
