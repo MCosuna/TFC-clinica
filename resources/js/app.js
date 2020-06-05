@@ -24,7 +24,7 @@ Vue.use(VueGoogleMaps, {
 
 // Vue.component('contacto', VueGoogleMaps.Map);
 
-import Vuelidate from 'vuelidate'
+import Vuelidate from 'vuelidate';
 Vue.use(Vuelidate)
 //Vue.use(Vuetify);
 //importar las rutas desde vue routes

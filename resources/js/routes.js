@@ -29,7 +29,7 @@ import reserva from '@/js/components/reserva'
 import consultaE from '@/js/components/consultaE'
 import consultaG from '@/js/components/consultaG'
 import contacto from '@/js/components/contacto'
-
+import login from '@/js/components/login'
 import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
@@ -63,6 +63,12 @@ const router = new VueRouter({
             name: 'contacto',
             component: contacto
         },
+        {
+            path: '/login',
+            name:'login',
+            component: login
+        },
+        
     ]
 });
 

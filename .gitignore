@@ -10,4 +10,4 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/resources/js/app.js
+./resources/js/app.js
