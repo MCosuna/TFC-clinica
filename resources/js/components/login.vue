@@ -9,17 +9,17 @@
       <div class="main">
          <div class="col-md-6 col-sm-12">
             <div class="login-form">
-               <form>
+               <form @submit.prevent="login">
                   <div class="form-group">
                      <label>User Name</label>
-                     <input type="text" class="form-control" placeholder="User Name">
+                     <input type="text" class="form-control" placeholder="User Name" v-model="form.name">
                   </div>
                   <div class="form-group">
                      <label>Password</label>
-                     <input type="password" class="form-control" placeholder="Password">
+                     <input type="password" class="form-control" placeholder="Password" v-model="form.pass">
                   </div>
                   <button type="submit" class="btn btn-black">Login</button>
-                  <button type="submit" class="btn btn-secondary">Register</button>
+                  <!-- <button type="submit" class="btn btn-secondary">Register</button> -->
                </form>
             </div>
          </div>
@@ -27,17 +27,44 @@
 </div>
 
 
-	
-
-
-
 
 </template>
 
 <script>
 export default {
+  data: () => ({
+      form:{
+          name:"",
+          pass: "",
+      }
+  }),
   mounted() {
     console.log("Component mounted.");
+  },
+  methods:{
+      login(){
+             this.$http.post("/api/login/", this.form).then(
+        response => {
+        //   this.form.push(response.data.from);
+          this.form = {
+            name: "",
+            pass: "",
+          };
+          alert(JSON.stringify(response));
+        if(response.data.log == '1'){
+            localStorage.setItem('log' , '1');
+            window.location.href = '/PanelAdministrador';
+        }else{
+            alert('No se pudo autentificar');
+        }
+                  
+         
+        },
+        response => {
+          console.log("response error: "+response);
+        }
+      );
+      }
   }
 };
 </script>

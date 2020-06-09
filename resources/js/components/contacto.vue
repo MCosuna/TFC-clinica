@@ -97,7 +97,10 @@ export default {
 
 
   },
- 
+  beforeMount(){
+    
+    
+  },
   mounted() {
     console.log("Component mounted.");
 
