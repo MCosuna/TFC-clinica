@@ -2,8 +2,8 @@
 <div>
 <div class="sidenav">
          <div class="login-main-text">
-            <h2>Application<br> Login Page</h2>
-            <p>Login or register from here to access.</p>
+            <h2>Bienvenido!<br> Login Admin</h2>
+            <p>Introduce nombre y contraseña.</p>
          </div>
       </div>
       <div class="main">
@@ -11,12 +11,12 @@
             <div class="login-form">
                <form @submit.prevent="login">
                   <div class="form-group">
-                     <label>User Name</label>
-                     <input type="text" class="form-control" placeholder="User Name" v-model="form.name">
+                     <label>Nombre de usuario</label>
+                     <input type="text" class="form-control" placeholder="Nombre de usuario" v-model="form.name">
                   </div>
                   <div class="form-group">
-                     <label>Password</label>
-                     <input type="password" class="form-control" placeholder="Password" v-model="form.pass">
+                     <label>Contraseña</label>
+                     <input type="password" class="form-control" placeholder="Contraseña" v-model="form.pass">
                   </div>
                   <button type="submit" class="btn btn-black">Login</button>
                   <!-- <button type="submit" class="btn btn-secondary">Register</button> -->

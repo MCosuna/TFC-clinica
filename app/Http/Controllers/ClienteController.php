@@ -28,13 +28,14 @@ class ClienteController extends Controller
      }
 
 
+
         public function home(){
             return view('App');
         }
 
-        public function index(){
-            
-        }
+      public function getCitas(){
+        return Cliente::all();
+      }
 
 
 

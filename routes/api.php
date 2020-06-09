@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/login', 'AdministradorController@login');
+Route::get('/clientes', 'ClienteController@getCitas');

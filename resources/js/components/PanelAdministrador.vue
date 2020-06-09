@@ -2,7 +2,7 @@
 <div class="container">
   <h2>Contextual Classes</h2>
   <p>Contextual classes can be used to color table rows or table cells. The classes that can be used are: .active, .success, .info, .warning, and .danger.</p>
-  <table class="table">
+  <!-- <table class="table" >
     <thead>
       <tr>
         <th>Firstname</th>
@@ -42,7 +42,8 @@
         <td>act@example.com</td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
+  <button v-on:click="getCitas" type="submit" class="btn btn-black">pulsa</button>
 </div>
 
 </template>
@@ -58,12 +59,11 @@ export default {
     console.log("Component mounted.");
   },
   methods: {
-   getCitas(){
+   getCitas: function () {
                 let me =this;
-                let url = '/tareas' //Ruta que hemos creado para que nos devuelva todas las tareas
+                let url = '/api/clientes' //Ruta que hemos creado para que nos devuelva todas las tareas
                 axios.get(url).then(function (response) {
-                    //creamos un array y guardamos el contenido que nos devuelve el response
-                    me.arrayTasks = response.data;
+                  console.log(response);
                 })
                 .catch(function (error) {
                    
