@@ -3,10 +3,10 @@
     <div class="row">
       <div class="col">
         <header>Contacta con nosotros:</header>
-        <form id="form" class="topBefore" method="post" v-on:submit.prevent="crearContacto" >
-          <input id="name" type="text" placeholder="Nombre" v-model="cliente.name" />
-          <input id="email" type="text" placeholder="E-mail:" v-model="cliente.email" />
-          <textarea id="message" type="text" placeholder="Deja tu mensaje..." v-model="cliente.message"></textarea>
+        <form id="form" class="topBefore" method="post" v-on:submit.prevent="crearContacto" required >
+          <input id="name" type="text" placeholder="Nombre" v-model="cliente.name" required />
+          <input id="email" type="text" placeholder="E-mail:" v-model="cliente.email"  required/>
+          <textarea id="message" type="text" placeholder="Deja tu mensaje..." v-model="cliente.message" required></textarea>
           <input id="submit" type="submit" value="ENVIAR" />
         </form>
       </div>

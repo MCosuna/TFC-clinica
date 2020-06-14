@@ -2,14 +2,17 @@
   <!-- <div>
      <h2>Este es el componente de reserva</h2>
   </div>-->
-  
+
   <!-- -------------Component reserva------------------------------------------------------- -->
   <div class="reserva container-fluid center">
-    
     <div class="row" id="abs-center">
       <div class="col-md-12">
         <div class="well well-sm">
-          <form class="form-horizontal" v-on:submit.prevent="crearCita" method="post">
+          <form
+            class="form-horizontal"
+            v-on:submit.prevent="crearCita"
+            method="post"
+          >
             <fieldset>
               <legend class="text-center header">Reserva tu cita</legend>
               <!-- nombre del cliente -->
@@ -25,6 +28,10 @@
                     placeholder="Nombre"
                     class="form-control"
                     v-model="cliente.name"
+                    minlength="5"
+                    maxlength="40"
+                    pattern="[A-Za-z0-9]+"
+                    required
                   />
                 </div>
               </div>
@@ -41,6 +48,10 @@
                     placeholder="Apellidos"
                     class="form-control"
                     v-model="cliente.lname"
+                    minlength="5"
+                    maxlength="40"
+                    pattern="[A-Za-z0-9]+"
+                    required
                   />
                 </div>
               </div>
@@ -57,6 +68,8 @@
                     placeholder="Email"
                     class="form-control"
                     v-model="cliente.email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    required
                   />
                 </div>
               </div>
@@ -73,6 +86,8 @@
                     placeholder="Teléfono"
                     class="form-control"
                     v-model="cliente.phone"
+                    
+                    required
                   />
                 </div>
               </div>
@@ -89,12 +104,13 @@
                     placeholder="DNI"
                     class="form-control"
                     v-model="cliente.dni"
+                    required
                   />
                 </div>
               </div>
 
               <!-- selector de hora -->
- 
+
               <!-- textarea con mensaje para el profesional -->
               <div class="form-group">
                 <span class="col-md-1 col-md-offset-2 text-center">
@@ -108,13 +124,16 @@
                     placeholder="Déjanos un mensaje"
                     rows="7"
                     v-model="cliente.message"
+                    required
                   ></textarea>
                 </div>
               </div>
 
               <div class="form-group">
                 <div class="col-md-12 text-center">
-                  <button type="submit" class="btn btn-primary btn-lg">ENVIAR</button>
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    ENVIAR
+                  </button>
                 </div>
               </div>
             </fieldset>
@@ -179,7 +198,7 @@ export default {
           var phone = JSON.parse(JSON.stringify(response.data.phone));
           var message = JSON.parse(JSON.stringify(response.data.message));
           var dni = JSON.parse(JSON.stringify(response.data.dni));
-          
+
           // generar PDF para el cliente
 
           const img = new Image();
@@ -210,7 +229,14 @@ export default {
   }
 };
 </script>
-<style >
+<style>
+form input:valid {
+  border: 2px solid green;
+}
+
+form input:focus:invalid {
+  border: 2px solid red;
+}
 .btn {
   background-color: #660358;
 }

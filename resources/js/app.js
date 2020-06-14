@@ -12,6 +12,9 @@ import Form from './components/Form';
 import Vue2Editor from "vue2-editor";
 Vue.use(Vue2Editor);
 
+import VueSweetalert2 from 'vue-sweetalert2';
+Vue.use(VueSweetalert2);
+
 window.Form = Form;
 
 

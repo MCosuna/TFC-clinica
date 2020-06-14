@@ -147,13 +147,9 @@
 </template>
 
 <script>
-// export default {
-//   mounted() {
-//     console.log("Component mounted.");
-//   }
-// };
+
 export default {
-  // props: ["categories"],
+
   data() {
     return {
       loaded: false,
@@ -215,11 +211,9 @@ export default {
     submitDomain() {
       let data = new FormData();
       data.append("title", this.form.title);
-      // data.append("url", this.form.url);
       data.append("email", this.form.email);
       data.append("shortdescription", this.form.shortdescription);
       data.append("description", this.form.description);
-      // data.append("category_id", this.form.category_id);
 
       axios
         .post("/consultaGeneral", data)
