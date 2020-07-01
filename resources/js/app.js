@@ -20,7 +20,7 @@ window.Form = Form;
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: "AIzaSyBcewRtBVYkKKxZvqKZWJuLQz4DhKdLyy0",
+    key: "YOUR-API-KEY",
     libraries: "places" // necessary for places input
   }
 });

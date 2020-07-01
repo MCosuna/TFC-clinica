@@ -171,7 +171,7 @@ export default {
   mounted: function() {
     const script = document.createElement("script");
     script.src =
-      "https://www.paypal.com/sdk/js?client-id=Aa28dyrmhNJFquhe-aCYRzoRbjCkKJbtKsLgelujsZTWgufzzp7oJPi8KIpBvn61NS1cv_BvV_L48Lsj";
+      "YOUR-API-KEY";
     script.addEventListener("load", this.setLoaded);
     document.body.appendChild(script);
   },
