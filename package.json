@@ -35,7 +35,7 @@
         "@fortawesome/fontawesome-free": "^5.13.0",
         "font-awesome": "^4.7.0",
         "js-beautify": "^1.11.0",
-        "jspdf": "^1.5.3",
+        "jspdf": "^2.3.1",
         "jspdf-autotable": "^3.5.3",
         "save": "^2.4.0",
         "startbootstrap-clean-blog": "^5.0.8",
